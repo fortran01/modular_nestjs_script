@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Loyalty Program</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Customer Loyalty Program</h1>
+
+    {{#unless logged_in}}
+    <div id="login-form">
+        <label for="customer-id">Customer ID:</label>
+        <input type="text" id="customer-id" name="customer-id">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="shopping-window" style="display: none;"></div>
+    {{else}}
+    <div id="shopping-window">
+        <h2>Shopping Window</h2>
+        <p>Welcome, Customer ID: {{customer_id}}</p>
+        <div id="product-list">
+            {{#each products}}
+            <div class="product">
+                <img src="{{this.image_url}}" alt="{{this.name}}" width="100" height="100">
+                <h3>{{this.name}}</h3>
+                <p>Price: ${{this.price}}</p>
+                <button onclick="addToCart({{this.id}})">Add to Cart</button>
+            </div>
+            {{/each}}
+        </div>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+    {{/unless}}
+
+    {{#if logged_in}}
+    <div id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+    </div>
+    {{/if}}
+
+    <div id="result"></div>
+    <div id="error-messages"></div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

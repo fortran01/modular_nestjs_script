@@ -20,6 +20,19 @@
 npm install
 ```
 
+## Seeding the database
+
+```bash
+npm run seed
+```
+
 ## Running the application
 
-<!-- TODO: Add running the application -->
+- Start the application
+
+```bash
+npm run build
+npm run start
+```
+
+The application will be running on [http://localhost:3000](http://localhost:3000)
