@@ -23,7 +23,7 @@
   "dependencies": {
     "@nestjs/common": "^11.0.8",
     "@nestjs/core": "^11.0.7",
-    "@nestjs/platform-express": "^11.0.7",
+    "@nestjs/platform-express": "^11.0.8",
     "@nestjs/typeorm": "^11.0.0",
     "@types/hbs": "^4.0.4",
     "cookie-parser": "^1.4.7",
